@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/white"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.Settings">
 
     <LinearLayout
-        android:id="@+id/dashboard_upper_layout"
+        android:id="@+id/settings_upper_layout"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="#F3FAFF"
@@ -19,23 +19,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/userProfile"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_60sdp"
-            android:background="@drawable/icon_background" />
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="90dp"
+            android:src="@drawable/back_button"/>
 
         <TextView
-            android:id="@+id/dashboard_banner"
+            android:id="@+id/settings_banner"
             android:layout_width="220dp"
             android:layout_height="75dp"
             android:background="@drawable/dashboard_banner_container"
             android:fontFamily="@font/ubuntu"
             android:gravity="center"
             android:paddingRight="10dp"
-            android:text="Dashboard"
+            android:text="Settings"
             android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -43,33 +43,20 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/generalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_24sdp"
         android:layout_marginLeft="@dimen/_16sdp"
-        android:fontFamily="@font/ubuntu"
-        android:text="Welcome back, "
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="General"
+        android:textColor="#2E2E2E"
         android:textSize="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dashboard_upper_layout" />
-
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text=""
-        android:maxLines="1"
-        android:ellipsize="end"
-        android:textColor="@color/azure"
-        android:textSize="@dimen/_28ssp"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/settings_upper_layout" />
 
     <LinearLayout
-        android:id="@+id/dashboard_middle_layout1"
+        android:id="@+id/settings_middle_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_70sdp"
         android:layout_marginTop="@dimen/_32sdp"
@@ -79,10 +66,10 @@
         android:paddingRight="@dimen/_4sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName">
+        app:layout_constraintTop_toBottomOf="@+id/generalText">
 
         <LinearLayout
-            android:id="@+id/aivy_button"
+            android:id="@+id/userProfile_button"
             android:layout_width="@dimen/_140sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_6sdp"
@@ -95,21 +82,22 @@
             <ImageView
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
-                android:layout_marginRight="@dimen/_6sdp"
-                android:src="@drawable/aivy_icon" />
+                android:layout_marginRight="@dimen/_4sdp"
+                android:src="@drawable/profile_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_12sdp"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="Aivy"
+                android:text="Profile"
                 android:textColor="@color/azure"
                 android:textSize="@dimen/_18sdp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/subjects_button"
+            android:id="@+id/aboutApp_button"
             android:layout_width="@dimen/_140sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_6sdp"
@@ -119,10 +107,10 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="@dimen/_60sdp"
+                android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_60sdp"
-                android:layout_marginRight="@dimen/_6sdp"
-                android:src="@drawable/my_subjects_icon" />
+                android:layout_marginRight="@dimen/_3sdp"
+                android:src="@drawable/app_info_icon" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -135,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_14sdp"
                     android:fontFamily="@font/ubuntu_bold"
-                    android:text="My"
+                    android:text="About"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14ssp" />
@@ -144,10 +132,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/ubuntu_bold"
-                    android:text="Subjects"
+                    android:text="Application"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp" />
+                    android:textSize="@dimen/_13ssp" />
 
             </LinearLayout>
 
@@ -156,80 +144,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/dashboard_middle_layout2"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/_4sdp"
-        android:paddingRight="@dimen/_4sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dashboard_middle_layout1">
-
-        <LinearLayout
-            android:id="@+id/friends_button"
-            android:layout_width="@dimen/_140sdp"
-            android:layout_height="@dimen/_58sdp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:layout_marginRight="@dimen/_6sdp"
-            android:elevation="@dimen/_3sdp"
-            android:background="@drawable/azure_background_icon"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="@dimen/_45sdp"
-                android:layout_height="@dimen/_45sdp"
-                android:layout_marginTop="@dimen/_7sdp"
-                android:layout_marginRight="@dimen/_6sdp"
-                android:src="@drawable/friends_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:text="Friends"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_18sdp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/messages_button"
-            android:layout_width="@dimen/_140sdp"
-            android:layout_height="@dimen/_58sdp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:background="@drawable/white_background_icon"
-            android:elevation="@dimen/_3sdp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginRight="@dimen/_6sdp"
-                android:src="@drawable/messages_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:text="Messages"
-                android:textColor="@color/azure"
-                android:textSize="@dimen/_16ssp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/settings_button"
         android:layout_width="@dimen/_282sdp"
-        android:layout_height="@dimen/_58sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="@dimen/_11sdp"
         android:background="@drawable/white_background_icon"
         android:elevation="@dimen/_3sdp"
@@ -237,25 +154,36 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dashboard_middle_layout2">
+        app:layout_constraintTop_toBottomOf="@+id/settings_middle_layout">
 
         <ImageView
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_4sdp"
             android:layout_marginRight="@dimen/_6sdp"
-            android:src="@drawable/settings_icon" />
+            android:src="@drawable/logout_icon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_14sdp"
             android:fontFamily="@font/ubuntu_bold"
-            android:text="Settings"
+            android:text="Logout"
             android:textColor="@color/azure"
             android:textSize="@dimen/_18ssp" />
-
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/appVersionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/app_version"
+        android:textColor="#B5B5B5"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
