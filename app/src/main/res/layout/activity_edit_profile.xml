@@ -72,18 +72,9 @@
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_80sdp"
                 android:background="@drawable/icon_background2"
+                android:src="@drawable/sb_logo_only"
                 android:scaleType="centerCrop"
                 app:riv_oval="true" />
-
-            <TextView
-                android:id="@+id/tapImageText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/ubuntu"
-                android:text="Tap to add image"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_10ssp" />
 
         </FrameLayout>
 

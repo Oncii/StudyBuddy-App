@@ -25,7 +25,8 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginRight="@dimen/_60sdp"
-            android:background="@drawable/icon_background" />
+            android:scaleType="centerCrop"
+            android:background="@drawable/icon_background"/>
 
         <TextView
             android:id="@+id/dashboard_banner"

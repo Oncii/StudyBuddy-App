@@ -1,9 +1,5 @@
 package com.thesis.myapplication.activities;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,9 +11,12 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.thesis.myapplication.databinding.ActivityEditProfileBinding;
-import com.thesis.myapplication.databinding.ActivityUserProfileBinding;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
 
@@ -39,6 +38,7 @@ public class EditProfile extends AppCompatActivity {
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
+        loadUserDetails();
     }
 
     private void setListeners() {
@@ -112,7 +112,6 @@ public class EditProfile extends AppCompatActivity {
                             InputStream inputStream = getContentResolver().openInputStream(imageUri);
                             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                             binding.userProfilePic.setImageBitmap(bitmap);
-                            binding.tapImageText.setVisibility(View.GONE);
                             encodedImage = encodedImage(bitmap);
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -154,5 +153,16 @@ public class EditProfile extends AppCompatActivity {
             binding.updateButton.setVisibility(View.VISIBLE);
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    private void loadUserDetails() {
+        binding.editUsername.setText(preferenceManager.getString(Constants.KEY_USERNAME));
+        binding.editName.setText(preferenceManager.getString(Constants.KEY_NAME));
+        binding.editEmail.setText(preferenceManager.getString(Constants.KEY_EMAIL));
+        binding.editBio.setText(preferenceManager.getString(Constants.KEY_USER_BIO));
+        binding.editPassword.setText(preferenceManager.getString(Constants.KEY_PASSWORD));
+        byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        binding.userProfilePic.setImageBitmap(bitmap);
     }
 }
