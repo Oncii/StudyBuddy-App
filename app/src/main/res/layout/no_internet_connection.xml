@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="160dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/forget_pass_popup"
+    android:layout_gravity="center"
+    android:id="@+id/noInt_dialogContainer">
+
+    <TextView
+        android:id="@+id/noInt_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="No Internet Connection"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:gravity="fill_vertical"
+        android:paddingLeft="15dp"
+        android:background="@drawable/popup_title_bar"/>
+
+    <TextView
+        android:id="@+id/noInt_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please connect to the internet to proceed!"
+        android:fontFamily="@font/ubuntu"
+        android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textSize="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/noInt_cancel"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/cancel_button"
+            android:textAllCaps="false"
+            android:text="Cancel"
+            android:fontFamily="@font/ubuntu"
+            android:textColor="@color/azure"
+            android:transitionName="login_log"/>
+
+        <Button
+            android:id="@+id/noInt_connect"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/signup_button"
+            android:textAllCaps="false"
+            android:text="Connect"
+            android:fontFamily="@font/ubuntu"
+            android:transitionName="login_log"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,16 +1,29 @@
 package com.thesis.myapplication.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.thesis.myapplication.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.thesis.myapplication.databinding.ActivityLoginBinding;
 
 public class Login extends AppCompatActivity {
+
+    private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        setListeners();
+
     }
+
+    private void setListeners() {
+        binding.loginToSignupButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), SignUp.class)));
+    }
+
+
 }

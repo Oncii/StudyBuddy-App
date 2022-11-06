@@ -2,14 +2,20 @@
 
     <style name="Theme.StudyBuddyApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/azure</item>
-        <item name="colorSecondary">@color/white</item>
-        <item name="android:statusBarColor">@color/white</item>
+
+        <!-- Color for the pointer -->
+        <item name="colorSecondary">@color/azure</item>
+
+        <item name="android:statusBarColor">@color/black</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="Theme.StudyBuddyApp.NoStatusBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/azure</item>
-        <item name="colorSecondary">@color/white</item>
+
+        <!-- Color for the pointer -->
+        <item name="colorSecondary">@color/azure</item>
+
         <item name="android:statusBarColor">@color/white</item>
     </style>
 </resources>
