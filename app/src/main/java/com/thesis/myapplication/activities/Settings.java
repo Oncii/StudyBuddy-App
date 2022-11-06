@@ -2,6 +2,7 @@ package com.thesis.myapplication.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.thesis.myapplication.databinding.ActivityMainBinding;
@@ -21,5 +22,7 @@ public class Settings extends AppCompatActivity {
 
     private void setListeners(){
         binding.backButton.setOnClickListener(view -> onBackPressed());
+        binding.userProfileButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), UserProfile.class)));
     }
 }

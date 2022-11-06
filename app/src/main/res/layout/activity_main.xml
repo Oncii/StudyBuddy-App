@@ -32,7 +32,7 @@
             android:layout_width="220dp"
             android:layout_height="75dp"
             android:background="@drawable/dashboard_banner_container"
-            android:fontFamily="@font/ubuntu"
+            android:fontFamily="@font/ubuntu_bold"
             android:gravity="center"
             android:paddingRight="10dp"
             android:text="Dashboard"
@@ -51,6 +51,7 @@
         android:fontFamily="@font/ubuntu"
         android:text="Welcome back, "
         android:textSize="@dimen/_20sdp"
+        android:textColor="#2E2E2E"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dashboard_upper_layout" />
 

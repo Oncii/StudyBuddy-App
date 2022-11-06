@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="No Internet Connection"
-        android:fontFamily="@font/ubuntu"
+        android:fontFamily="@font/ubuntu_bold"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:gravity="fill_vertical"
