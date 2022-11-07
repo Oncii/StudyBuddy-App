@@ -42,32 +42,33 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/infoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are chatting with:"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="@color/black"
+        android:ellipsize="end"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintTop_toBottomOf="@id/chat_upper_layout"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
         android:id="@+id/userNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="@dimen/_25sdp"
         android:fontFamily="@font/ubuntu_bold"
-        android:text=""
+        android:text="admin aivy"
         android:maxLines="1"
         android:ellipsize="end"
         android:gravity="center"
         android:textColor="@color/azure"
-        android:textSize="@dimen/_20sdp"
+        android:textSize="@dimen/_26ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chat_upper_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/infoText" />
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/userProfilePic"
-        android:layout_width="@dimen/_60sdp"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/icon_background2"
-        android:scaleType="centerCrop"
-        android:src="@drawable/sb_logo_only"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chat_upper_layout"
-        app:riv_oval="true" />
 
     <FrameLayout
         android:layout_width="@dimen/_300sdp"
@@ -77,14 +78,17 @@
         app:layout_constraintBottom_toTopOf="@+id/lower_chat_banner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userProfilePic">
+        app:layout_constraintTop_toBottomOf="@id/userNameText">
         
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:orientation="vertical"
+            android:background="#F3FAFF"
             android:overScrollMode="never"
+            app:stackFromEnd="true"
             android:padding="@dimen/_20sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:visibility="gone" />
@@ -149,6 +153,7 @@
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textSize="@dimen/_11ssp"
         android:paddingStart="@dimen/_16sdp"
         android:paddingEnd="@dimen/_16sdp"
         android:fontFamily="@font/ubuntu"

@@ -64,6 +64,7 @@ public class Friends extends AppCompatActivity implements UserListener {
                                 user_p.setImageResource(R.drawable.sb_logo_only);
                             }
                             user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
+                            user.id = queryDocumentSnapshot.getId();
                             users.add(user);
                         }
                         if (users.size() > 0) {

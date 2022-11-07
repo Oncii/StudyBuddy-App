@@ -3,31 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_8sdp"
     android:padding="@dimen/_4sdp">
-
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/userProfile"
-        android:layout_width="@dimen/_25sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:background="@drawable/profile_pic_background"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/messageBox"
-        app:riv_oval="true" />
 
     <TextView
         android:id="@+id/messageBox"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/chat_holder_background_user"
         android:fontFamily="@font/ubuntu"
-        android:padding="@dimen/_12sdp"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp"
         android:textColor="@color/white"
         android:textSize="@dimen/_13ssp"
-        android:layout_marginRight="@dimen/_5sdp"
-        app:layout_constraintEnd_toStartOf="@id/userProfile"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.70" />
+        app:layout_constraintWidth_max="wrap"
+        app:layout_constraintWidth_percent="0.65" />
 
     <TextView
         android:id="@+id/dateTimeText"
@@ -35,8 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_4sdp"
         android:fontFamily="@font/ubuntu"
-        android:textSize="@dimen/_10ssp"
-        android:paddingEnd="@dimen/_24sdp"
+        android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="@id/messageBox"
         app:layout_constraintTop_toBottomOf="@id/messageBox" />
 
