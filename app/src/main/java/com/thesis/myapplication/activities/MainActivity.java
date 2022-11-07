@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private void setListeners() {
         binding.settingsButton.setOnClickListener(view ->
                 startActivity(new Intent(getApplicationContext(), Settings.class)));
+        binding.friendsButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), Friends.class)));
     }
 
     private void loadUserDetails() {
@@ -73,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                         preferenceManager.getString(Constants.KEY_USER_ID)
                 );
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnSuccessListener(unused -> showToast("Token updated successfully"))
                 .addOnFailureListener(e -> showToast("Token update failed"));
     }
 }

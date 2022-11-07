@@ -15,6 +15,14 @@
         android:theme="@style/Theme.StudyBuddyApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.Friends"
+            android:exported="false"
+            android:theme="@style/Theme.StudyBuddyApp2">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.EditProfile"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp"
@@ -68,9 +76,9 @@
         <activity
             android:name=".activities.Login"
             android:exported="true"
+            android:noHistory="true"
             android:theme="@style/Theme.StudyBuddyApp"
-            android:windowSoftInputMode="adjustResize"
-            android:noHistory="true">
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

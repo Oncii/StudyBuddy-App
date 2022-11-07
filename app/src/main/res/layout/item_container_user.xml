@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_background_icon"
+    android:elevation="@dimen/_8sdp"
+    android:padding="@dimen/_8sdp"
+    android:layout_marginTop="@dimen/_10sdp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/profilePic"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/icon_background2"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <View
+        android:id="@+id/viewSupport"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/profilePic"
+        app:layout_constraintStart_toEndOf="@id/profilePic"
+        app:layout_constraintTop_toTopOf="@id/profilePic" />
+
+    <TextView
+        android:id="@+id/userNameText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/ubuntu_bold"
+        android:maxLines="1"
+        android:textColor="#43B0F1"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toTopOf="@id/viewSupport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profilePic" />
+
+    <TextView
+        android:id="@+id/userEmailText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/ubuntu"
+        android:maxLines="1"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profilePic"
+        app:layout_constraintTop_toBottomOf="@id/viewSupport" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
