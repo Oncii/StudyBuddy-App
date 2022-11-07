@@ -16,6 +16,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.makeramen.roundedimageview.RoundedImageView;
+import com.thesis.myapplication.R;
 import com.thesis.myapplication.databinding.ActivityEditProfileBinding;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
@@ -83,7 +85,7 @@ public class EditProfile extends AppCompatActivity {
                     preferenceManager.putString(Constants.KEY_PASSWORD, binding.editPassword.getText().toString());
                     preferenceManager.putString(Constants.KEY_IMAGE, encodedImage);
                     Intent intent = new Intent(getApplicationContext(), UserProfile.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 })
                 .addOnFailureListener(exception -> {
@@ -161,8 +163,15 @@ public class EditProfile extends AppCompatActivity {
         binding.editEmail.setText(preferenceManager.getString(Constants.KEY_EMAIL));
         binding.editBio.setText(preferenceManager.getString(Constants.KEY_USER_BIO));
         binding.editPassword.setText(preferenceManager.getString(Constants.KEY_PASSWORD));
-        byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        binding.userProfilePic.setImageBitmap(bitmap);
+        if(preferenceManager.getString(Constants.KEY_IMAGE) != null){
+            byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            binding.userProfilePic.setImageBitmap(bitmap);
+            binding.userProfilePic.setCornerRadius(30);
+        }else{
+            RoundedImageView user_p;
+            user_p = findViewById(R.id.userProfilePic);
+            user_p.setImageResource(R.drawable.sb_logo_only);
+        }
     }
 }

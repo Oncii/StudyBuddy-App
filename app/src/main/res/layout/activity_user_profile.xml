@@ -73,15 +73,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userInfoText">
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/userProfilePic"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_110sdp"
                 android:background="@drawable/icon_background2"
                 android:scaleType="centerCrop"
                 android:src="@drawable/sb_logo_only"

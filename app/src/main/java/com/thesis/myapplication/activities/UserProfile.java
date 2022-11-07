@@ -8,6 +8,8 @@ import android.util.Base64;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.makeramen.roundedimageview.RoundedImageView;
+import com.thesis.myapplication.R;
 import com.thesis.myapplication.databinding.ActivityUserProfileBinding;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
@@ -38,8 +40,15 @@ public class UserProfile extends AppCompatActivity {
         binding.userEmail.setText(preferenceManager.getString(Constants.KEY_EMAIL));
         binding.userBio.setText(preferenceManager.getString(Constants.KEY_USER_BIO));
         binding.userPassword.setText(preferenceManager.getString(Constants.KEY_PASSWORD));
-        byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        binding.userProfilePic.setImageBitmap(bitmap);
+        if(preferenceManager.getString(Constants.KEY_IMAGE) != null){
+            byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            binding.userProfilePic.setImageBitmap(bitmap);
+            binding.userProfilePic.setCornerRadius(30);
+        }else{
+            RoundedImageView user_p;
+            user_p = findViewById(R.id.userProfilePic);
+            user_p.setImageResource(R.drawable.sb_logo_only);
+        }
     }
 }

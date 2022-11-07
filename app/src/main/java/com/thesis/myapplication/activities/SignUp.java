@@ -38,6 +38,7 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
+
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
@@ -51,14 +52,18 @@ public class SignUp extends AppCompatActivity {
         user.put(Constants.KEY_EMAIL, binding.signupEmail.getText().toString());
         user.put(Constants.KEY_PASSWORD, binding.signupPassword.getText().toString());
         database.collection(Constants.KEY_COLLECTION_USERS).add(user).addOnSuccessListener(documentReference -> {
-            loading(false);
-            preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
-            preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
-            preferenceManager.putString(Constants.KEY_USERNAME, binding.signupUsername.getText().toString());
+                    loading(false);
+                    preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                    preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
+                    preferenceManager.putString(Constants.KEY_NAME, binding.signupName.getText().toString());
+                    preferenceManager.putString(Constants.KEY_USERNAME, binding.signupUsername.getText().toString());
+                    preferenceManager.putString(Constants.KEY_EMAIL, binding.signupEmail.getText().toString());
+                    preferenceManager.putString(Constants.KEY_PASSWORD, binding.signupPassword.getText().toString());
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
-        })
+                    finish();
+                })
                 .addOnFailureListener(exception -> {
                     loading(false);
                     showToast(exception.getMessage());
