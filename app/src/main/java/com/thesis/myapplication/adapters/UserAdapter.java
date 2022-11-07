@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.thesis.myapplication.databinding.ItemContainerUserBinding;
+import com.thesis.myapplication.listeners.UserListener;
 import com.thesis.myapplication.models.User;
 
 import java.util.List;
@@ -19,9 +20,11 @@ import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
 
     private final List<User> users;
+    private final UserListener userListener;
 
-    public UserAdapter(List<User> users) {
+    public UserAdapter(List<User> users, UserListener userListener) {
         this.users = users;
+        this.userListener = userListener;
     }
 
     @NonNull
@@ -59,6 +62,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             binding.userNameText.setText(user.name);
             binding.userEmailText.setText(user.email);
             binding.profilePic.setImageBitmap(getUserImage(user.image));
+            binding.getRoot().setOnClickListener(view -> userListener.onUserClicked(user));
         }
     }
 

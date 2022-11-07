@@ -1,5 +1,6 @@
 package com.thesis.myapplication.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.thesis.myapplication.R;
 import com.thesis.myapplication.adapters.UserAdapter;
 import com.thesis.myapplication.databinding.ActivityFriendsBinding;
+import com.thesis.myapplication.listeners.UserListener;
 import com.thesis.myapplication.models.User;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
@@ -18,7 +20,7 @@ import com.thesis.myapplication.utilities.PreferenceManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Friends extends AppCompatActivity {
+public class Friends extends AppCompatActivity implements UserListener {
 
     private ActivityFriendsBinding binding;
     private PreferenceManager preferenceManager;
@@ -33,7 +35,7 @@ public class Friends extends AppCompatActivity {
         getUsers();
     }
 
-    private void setListeners(){
+    private void setListeners() {
         binding.backButton.setOnClickListener(view -> onBackPressed());
     }
 
@@ -45,18 +47,18 @@ public class Friends extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     loading(false);
                     String currentUserId = preferenceManager.getString(Constants.KEY_USER_ID);
-                    if(task.isSuccessful() && task.getResult() != null){
+                    if (task.isSuccessful() && task.getResult() != null) {
                         List<User> users = new ArrayList<>();
-                        for(QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()){
-                            if(currentUserId.equals(queryDocumentSnapshot.getId())) {
+                        for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
+                            if (currentUserId.equals(queryDocumentSnapshot.getId())) {
                                 continue;
                             }
                             User user = new User();
                             user.name = queryDocumentSnapshot.getString(Constants.KEY_NAME);
                             user.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
-                            if(queryDocumentSnapshot.getString(Constants.KEY_IMAGE) != null){
+                            if (queryDocumentSnapshot.getString(Constants.KEY_IMAGE) != null) {
                                 user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
-                            }else{
+                            } else {
                                 ImageView user_p;
                                 user_p = findViewById(R.id.profilePic);
                                 user_p.setImageResource(R.drawable.sb_logo_only);
@@ -64,15 +66,14 @@ public class Friends extends AppCompatActivity {
                             user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
                             users.add(user);
                         }
-                        if (users.size() > 0 ){
-                            UserAdapter userAdapter = new UserAdapter(users);
+                        if (users.size() > 0) {
+                            UserAdapter userAdapter = new UserAdapter(users, this);
                             binding.rvContainer.setAdapter(userAdapter);
                             binding.rvContainer.setVisibility(View.VISIBLE);
-                        }
-                        else {
+                        } else {
                             errorMessage();
                         }
-                    }else {
+                    } else {
                         errorMessage();
                     }
                 });
@@ -85,10 +86,18 @@ public class Friends extends AppCompatActivity {
     }
 
     private void loading(Boolean isLoading) {
-        if(isLoading){
+        if (isLoading) {
             binding.progressBar.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(),Chat.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
     }
 }

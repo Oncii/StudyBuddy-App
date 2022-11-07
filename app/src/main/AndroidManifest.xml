@@ -15,8 +15,10 @@
         android:theme="@style/Theme.StudyBuddyApp"
         tools:targetApi="31">
         <activity
-            android:name=".Chat"
-            android:exported="false">
+            android:name=".activities.Chat"
+            android:exported="false"
+            android:theme="@style/Theme.StudyBuddyApp"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -24,7 +26,8 @@
         <activity
             android:name=".activities.Friends"
             android:exported="false"
-            android:theme="@style/Theme.StudyBuddyApp2">
+            android:theme="@style/Theme.StudyBuddyApp2"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
