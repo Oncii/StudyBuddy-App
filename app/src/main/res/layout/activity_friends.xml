@@ -119,7 +119,7 @@
         android:translationZ="90dp"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_60sdp"
-        android:background="@drawable/friend_botton_banner"
+        android:background="@drawable/friend_button_banner"
         android:elevation="@dimen/_10sdp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
@@ -127,7 +127,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/userProfile_button"
+            android:id="@+id/addFriends_button"
             android:layout_width="@dimen/_104sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_6sdp"
