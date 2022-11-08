@@ -15,6 +15,15 @@
         android:theme="@style/Theme.StudyBuddyApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.Messages"
+            android:theme="@style/Theme.StudyBuddyApp2"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.Chat"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp"

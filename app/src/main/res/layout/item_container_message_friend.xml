@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/messageBox"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/chat_holder_background_friend"
         android:fontFamily="@font/ubuntu"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toEndOf="@id/friendProfile"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_max="wrap"
-        app:layout_constraintWidth_percent="0.70" />
+        app:layout_constraintWidth_percent="0.75" />
 
     <TextView
         android:id="@+id/dateTimeText"

@@ -18,6 +18,7 @@ import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Friends extends AppCompatActivity implements UserListener {
@@ -67,6 +68,7 @@ public class Friends extends AppCompatActivity implements UserListener {
                             user.id = queryDocumentSnapshot.getId();
                             users.add(user);
                         }
+                        Collections.shuffle(users);
                         if (users.size() > 0) {
                             UserAdapter userAdapter = new UserAdapter(users, this);
                             binding.rvContainer.setAdapter(userAdapter);
@@ -96,7 +98,7 @@ public class Friends extends AppCompatActivity implements UserListener {
 
     @Override
     public void onUserClicked(User user) {
-        Intent intent = new Intent(getApplicationContext(),Chat.class);
+        Intent intent = new Intent(getApplicationContext(), Chat.class);
         intent.putExtra(Constants.KEY_USER, user);
         startActivity(intent);
         finish();

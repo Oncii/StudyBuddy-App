@@ -55,10 +55,10 @@ public class SignUp extends AppCompatActivity {
                     loading(false);
                     preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                     preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
-                    preferenceManager.putString(Constants.KEY_NAME, binding.signupName.getText().toString());
-                    preferenceManager.putString(Constants.KEY_USERNAME, binding.signupUsername.getText().toString());
-                    preferenceManager.putString(Constants.KEY_EMAIL, binding.signupEmail.getText().toString());
-                    preferenceManager.putString(Constants.KEY_PASSWORD, binding.signupPassword.getText().toString());
+                    preferenceManager.putString(Constants.KEY_NAME, binding.signupName.getText().toString().trim());
+                    preferenceManager.putString(Constants.KEY_USERNAME, binding.signupUsername.getText().toString().trim());
+                    preferenceManager.putString(Constants.KEY_EMAIL, binding.signupEmail.getText().toString().trim());
+                    preferenceManager.putString(Constants.KEY_PASSWORD, binding.signupPassword.getText().toString().trim());
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);

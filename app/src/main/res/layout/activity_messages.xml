@@ -9,7 +9,7 @@
     tools:context=".activities.Friends">
 
     <LinearLayout
-        android:id="@+id/friends_upper_layout"
+        android:id="@+id/message_upper_layout"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="#F3FAFF"
@@ -28,42 +28,41 @@
             android:src="@drawable/back_button" />
 
         <TextView
-            android:id="@+id/friends_banner"
+            android:id="@+id/message_banner"
             android:layout_width="220dp"
             android:layout_height="75dp"
             android:background="@drawable/dashboard_banner_container"
             android:fontFamily="@font/ubuntu_bold"
             android:gravity="center"
             android:paddingRight="10dp"
-            android:text="Meet Friends"
+            android:text="Messages"
             android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-
     <TextView
         android:id="@+id/friendText1"
-        android:layout_width="@dimen/_135sdp"
+        android:layout_width="@dimen/_200sdp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/ubuntu_bold"
-        android:text="Look for your"
+        android:text="Engage conversation with your"
         android:textColor="#5E5E5E"
-        android:textSize="@dimen/_20ssp"
+        android:textSize="@dimen/_13ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/friends_upper_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/message_upper_layout" />
 
     <TextView
         android:id="@+id/friendText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:fontFamily="@font/ubuntu_bold"
         android:paddingLeft="@dimen/_12sdp"
-        android:text="study buddy!"
+        android:text="study buddies!"
         android:textColor="@color/azure"
         android:textSize="@dimen/_26ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,15 +71,15 @@
     <FrameLayout
         android:layout_width="@dimen/_280sdp"
         android:layout_height="0dp"
-        android:background="@drawable/friend_list_holder"
+        android:background="@drawable/message_list_holder"
         android:elevation="@dimen/_14sdp"
-        app:layout_constraintBottom_toTopOf="@+id/lower_friend_banner"
+        app:layout_constraintBottom_toTopOf="@id/lower_message_banner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/friendText2">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvContainer"
+            android:id="@+id/rvMessages"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -115,9 +114,9 @@
     </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/lower_friend_banner"
+        android:id="@+id/lower_message_banner"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="@dimen/_58sdp"
         android:background="@drawable/friend_button_banner"
         android:elevation="@dimen/_10sdp"
         android:paddingLeft="@dimen/_4sdp"
@@ -129,8 +128,8 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/addFriends_button"
-            android:layout_width="@dimen/_95sdp"
+            android:id="@+id/addMessage_button"
+            android:layout_width="@dimen/_98sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_6sdp"
             android:background="@drawable/white_background_icon"
@@ -143,75 +142,17 @@
             <ImageView
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginRight="@dimen/_4sdp"
-                android:src="@drawable/add_friends_icon" />
+                android:src="@drawable/add_conversation_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_11sdp"
                 android:layout_marginRight="@dimen/_12sdp"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="Add Friends"
-                android:textColor="@color/azure"
-                android:textSize="@dimen/_11ssp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/friendList_button"
-            android:layout_width="@dimen/_95sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_3sdp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:background="@drawable/white_background_icon"
-            android:elevation="@dimen/_4sdp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_4sdp">
-
-            <ImageView
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_45sdp"
-                android:src="@drawable/friend_list_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_12sdp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:text="Friend List"
-                android:textColor="@color/azure"
-                android:textSize="@dimen/_11ssp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/friendRequest_button"
-            android:layout_width="@dimen/_95sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_3sdp"
-            android:layout_marginRight="@dimen/_4sdp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:background="@drawable/white_background_icon"
-            android:elevation="@dimen/_4sdp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_4sdp">
-
-            <ImageView
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_45sdp"
-                android:src="@drawable/friend_request_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_12sdp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:text="Friend Request"
+                android:text="New Message"
                 android:textColor="@color/azure"
                 android:textSize="@dimen/_11ssp" />
 

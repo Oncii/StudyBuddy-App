@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Settings.class)));
         binding.friendsButton.setOnClickListener(view ->
                 startActivity(new Intent(getApplicationContext(), Friends.class)));
+        binding.messagesButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), Messages.class)));
     }
 
     private void loadUserDetails() {

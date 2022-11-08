@@ -110,6 +110,7 @@
                 android:background="@drawable/input_background"
                 android:fontFamily="@font/ubuntu"
                 android:hint="Full Name"
+                android:enabled="false"
                 android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:inputType="text"

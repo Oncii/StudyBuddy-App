@@ -27,7 +27,7 @@
             android:src="@drawable/back_button" />
 
         <TextView
-            android:id="@+id/userProfile_banner"
+            android:id="@+id/chat_banner"
             android:layout_width="220dp"
             android:layout_height="75dp"
             android:background="@drawable/dashboard_banner_container"
@@ -45,33 +45,43 @@
         android:id="@+id/infoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You are chatting with:"
         android:layout_marginLeft="@dimen/_12sdp"
-        android:fontFamily="@font/ubuntu"
-        android:textColor="@color/black"
         android:ellipsize="end"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="You are chatting with:"
+        android:textColor="#5E5E5E"
         android:textSize="@dimen/_13ssp"
-        app:layout_constraintTop_toBottomOf="@id/chat_upper_layout"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chat_upper_layout" />
 
     <TextView
         android:id="@+id/userNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_25sdp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="admin aivy"
-        android:maxLines="1"
         android:ellipsize="end"
+        android:fontFamily="@font/ubuntu_bold"
         android:gravity="center"
+        android:maxLines="1"
+        android:text="admin aivy"
         android:textColor="@color/azure"
         android:textSize="@dimen/_26ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoText" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/infoImage"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginRight="@dimen/_14sdp"
+        android:elevation="@dimen/_10sdp"
+        android:src="@drawable/information_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chat_upper_layout" />
 
     <FrameLayout
-        android:layout_width="@dimen/_300sdp"
+        android:layout_width="@dimen/_280sdp"
         android:layout_height="0dp"
         android:background="@drawable/friend_list_holder"
         android:elevation="@dimen/_14sdp"
@@ -79,25 +89,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userNameText">
-        
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvChat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#F3FAFF"
             android:clipToPadding="false"
             android:orientation="vertical"
-            android:background="#F3FAFF"
             android:overScrollMode="never"
-            app:stackFromEnd="true"
-            android:padding="@dimen/_20sdp"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:visibility="gone" />
-        
+            app:stackFromEnd="true" />
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center" />
 
     </FrameLayout>
 
@@ -112,54 +122,54 @@
         android:translationZ="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-        
+
     </LinearLayout>
-    
+
     <FrameLayout
         android:id="@+id/layoutSend"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/send_icon_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:translationZ="90dp"
         android:elevation="@dimen/_18sdp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        
+
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginLeft="@dimen/_4sdp"
             android:padding="@dimen/_8sdp"
-            android:src="@drawable/send_button_icon"/>
+            android:src="@drawable/send_button_icon" />
 
     </FrameLayout>
-    
+
     <EditText
         android:id="@+id/textInputBox"
         android:layout_width="0dp"
         android:layout_height="@dimen/_40sdp"
-        android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginRight="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/text_input_background"
+        android:fontFamily="@font/ubuntu"
         android:hint="Type a message"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
-        android:inputType="text"
-        android:textSize="@dimen/_11ssp"
+        android:inputType="textMultiLine"
         android:paddingStart="@dimen/_16sdp"
         android:paddingEnd="@dimen/_16sdp"
-        android:fontFamily="@font/ubuntu"
+        android:textSize="@dimen/_12ssp"
+        android:translationZ="@dimen/_70sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/layoutSend"
-        app:layout_constraintStart_toStartOf="parent"
-        android:translationZ="@dimen/_70sdp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
