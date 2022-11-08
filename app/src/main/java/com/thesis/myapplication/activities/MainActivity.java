@@ -20,7 +20,7 @@ import com.thesis.myapplication.utilities.PreferenceManager;
 
 import org.checkerframework.checker.units.qual.C;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ActivityMainBinding binding;
     private PreferenceManager preferenceManager;

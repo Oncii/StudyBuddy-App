@@ -1,12 +1,8 @@
 package com.thesis.myapplication.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -24,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Messages extends AppCompatActivity implements ConversionListener {
+public class Messages extends BaseActivity implements ConversionListener {
 
     private ActivityMessagesBinding binding;
     private PreferenceManager preferenceManager;

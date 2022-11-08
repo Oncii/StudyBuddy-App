@@ -1,9 +1,8 @@
 package com.thesis.myapplication.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +16,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.thesis.myapplication.R;
 import com.thesis.myapplication.adapters.ChatAdapter;
 import com.thesis.myapplication.databinding.ActivityChatBinding;
 import com.thesis.myapplication.models.ChatMessage;
@@ -31,8 +31,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
-public class Chat extends AppCompatActivity {
+public class Chat extends BaseActivity {
 
     private ActivityChatBinding binding;
     private User receiverUser;
@@ -41,6 +42,7 @@ public class Chat extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private FirebaseFirestore database;
     private String conversionId = null;
+    private Boolean isReceiverAvailable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +112,28 @@ public class Chat extends AppCompatActivity {
             addConversion(conversion);
         }
         binding.textInputBox.setText(null);
+    }
+
+    private void listenAvailabilityOfReceiver() {
+        database.collection(Constants.KEY_COLLECTION_USERS).document(
+                receiverUser.id
+        ).addSnapshotListener(Chat.this, (value, error) -> {
+            if(error != null){
+                return;
+            }
+            if (value != null){
+                if(value.getLong(Constants.KEY_AVAILABILITY) != null) {
+                    int availability = Objects.requireNonNull(
+                            value.getLong(Constants.KEY_AVAILABILITY)
+                    ).intValue();
+                    isReceiverAvailable = availability == 1;
+                }
+            } if(isReceiverAvailable) {
+                binding.userNameText.setBackgroundResource(R.drawable.online_background);
+            } else {
+                binding.userNameText.setBackgroundResource(R.drawable.offline_background);
+            }
+        });
     }
 
     private void listenMessages() {
@@ -216,4 +240,10 @@ public class Chat extends AppCompatActivity {
             conversionId = documentSnapshot.getId();
         }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listenAvailabilityOfReceiver();
+    }
 }

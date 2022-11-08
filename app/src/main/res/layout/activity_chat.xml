@@ -62,10 +62,11 @@
         android:ellipsize="end"
         android:fontFamily="@font/ubuntu_bold"
         android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/offline_background"
         android:maxLines="1"
-        android:text="admin aivy"
-        android:textColor="@color/azure"
-        android:textSize="@dimen/_26ssp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_22ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoText" />
 

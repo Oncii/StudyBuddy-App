@@ -1,7 +1,5 @@
 package com.thesis.myapplication.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -9,14 +7,13 @@ import android.widget.Toast;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.thesis.myapplication.databinding.ActivityMainBinding;
 import com.thesis.myapplication.databinding.ActivitySettingsBinding;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
 
 import java.util.HashMap;
 
-public class Settings extends AppCompatActivity {
+public class Settings extends BaseActivity {
 
     private ActivitySettingsBinding binding;
     private PreferenceManager preferenceManager;

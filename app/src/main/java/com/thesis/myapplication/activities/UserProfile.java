@@ -6,15 +6,13 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.thesis.myapplication.R;
 import com.thesis.myapplication.databinding.ActivityUserProfileBinding;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
 
-public class UserProfile extends AppCompatActivity {
+public class UserProfile extends BaseActivity {
 
     private ActivityUserProfileBinding binding;
     private PreferenceManager preferenceManager;

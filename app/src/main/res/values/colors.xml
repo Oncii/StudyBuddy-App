@@ -11,4 +11,6 @@
     <color name="light_azure">#F3FAFF</color>
     <color name="error">#B00020</color>
     <color name="received_message_background">#090D16</color>
+    <color name="active_color">#50C878</color>
+    <color name="inactive_color">#A9A9A9</color>
 </resources>
