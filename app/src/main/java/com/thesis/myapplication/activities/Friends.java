@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.thesis.myapplication.R;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Friends extends BaseActivity implements UserListener {
+public class Friends extends AppCompatActivity implements UserListener {
 
     private ActivityFriendsBinding binding;
     private PreferenceManager preferenceManager;
