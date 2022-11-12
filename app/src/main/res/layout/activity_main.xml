@@ -25,8 +25,10 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginRight="@dimen/_60sdp"
-            android:background="@drawable/icon_background"
-            android:scaleType="centerCrop" />
+            android:background="@drawable/icon_background2"
+            android:src="@drawable/sb_logo_only"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"/>
 
         <TextView
             android:id="@+id/dashboard_banner"
@@ -38,7 +40,7 @@
             android:paddingRight="10dp"
             android:text="Dashboard"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -66,7 +68,7 @@
         android:maxLines="1"
         android:text=""
         android:textColor="@color/azure"
-        android:textSize="@dimen/_28ssp"
+        android:textSize="@dimen/_28sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
 
@@ -141,7 +143,7 @@
                     android:text="My"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -150,7 +152,7 @@
                     android:text="Subjects"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp" />
+                    android:textSize="@dimen/_14sdp" />
 
             </LinearLayout>
 
@@ -205,7 +207,7 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:text="Meet"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -215,7 +217,7 @@
                     android:text="Friends"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp" />
+                    android:textSize="@dimen/_14sdp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -244,7 +246,7 @@
                 android:fontFamily="@font/ubuntu_bold"
                 android:text="Messages"
                 android:textColor="@color/azure"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16sdp" />
 
         </LinearLayout>
 
@@ -277,7 +279,7 @@
             android:fontFamily="@font/ubuntu_bold"
             android:text="Settings"
             android:textColor="@color/azure"
-            android:textSize="@dimen/_18ssp" />
+            android:textSize="@dimen/_18sdp" />
 
     </LinearLayout>
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/uploadPic_dialogContainer"
+    android:layout_width="@dimen/_225sdp"
+    android:layout_height="@dimen/_110sdp"
+    android:layout_gravity="center"
+    android:background="@drawable/forget_pass_popup"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/uploadPic_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/popup_title_bar"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="fill_vertical"
+        android:paddingLeft="@dimen/_10sdp"
+        android:text="Select your new profile pic"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp" />
+
+    <TextView
+        android:id="@+id/uploadPic_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Upload a new profile picture to continue!"
+        android:textAlignment="center"
+        android:textSize="@dimen/_11sdp" />
+
+
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/uploadPicture"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/signup_button"
+        android:fontFamily="@font/ubuntu"
+        android:text="OK"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        android:transitionName="login_log" />
+
+
+</LinearLayout>

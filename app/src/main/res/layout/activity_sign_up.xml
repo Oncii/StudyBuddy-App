@@ -32,7 +32,7 @@
             android:fontFamily="@font/ubuntu_bold"
             android:text="StudyBuddy AI"
             android:textColor="@color/azure"
-            android:textSize="@dimen/_16ssp" />
+            android:textSize="@dimen/_16sdp" />
 
         <TextView
             android:id="@+id/signup_text"
@@ -57,7 +57,7 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12sdp" />
 
         <EditText
             android:id="@+id/signup_username"
@@ -71,7 +71,7 @@
             android:importantForAutofill="no"
             android:inputType="text"
             android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12sdp" />
 
         <EditText
             android:id="@+id/signup_email"
@@ -85,7 +85,7 @@
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12sdp" />
 
         <EditText
             android:id="@+id/signup_password"
@@ -99,7 +99,7 @@
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12sdp" />
 
         <EditText
             android:id="@+id/signup_confirm_password"
@@ -113,7 +113,7 @@
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:padding="@dimen/_12sdp"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_12sdp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,6 +145,7 @@
                 android:animateLayoutChanges="true">
 
                 <com.google.android.material.button.MaterialButton
+                    android:onClick="signupUser"
                     android:id="@+id/signup_button"
                     android:layout_width="@dimen/_125sdp"
                     android:layout_height="@dimen/_45sdp"
@@ -159,6 +160,7 @@
                     android:id="@+id/progressBar"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
                     android:layout_gravity="center"
                     android:visibility="invisible"/>
 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="210dp"
+    android:layout_gravity="center"
+    android:background="@drawable/forget_pass_popup"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/forgot_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/reset_title"
+        android:fontFamily="@font/ubuntu"
+        android:gravity="fill_vertical"
+        android:paddingLeft="15dp"
+        android:text="Reset Password"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/forgot_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="18dp"
+        app:boxBackgroundColor="#F3FAFF"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu"
+            android:hint="Enter email to receive reset link"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/_10sdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/forgot_cancel"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/cancel_button"
+            android:fontFamily="@font/ubuntu"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/azure" />
+
+        <Button
+            android:id="@+id/forgot_submit"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/signup_button"
+            android:fontFamily="@font/ubuntu"
+            android:text="Submit"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>

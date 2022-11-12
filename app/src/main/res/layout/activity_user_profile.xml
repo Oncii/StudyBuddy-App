@@ -1,206 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/white"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:scrollbars="none"
     tools:context=".activities.UserProfile">
 
     <LinearLayout
-        android:id="@+id/userProfile_upper_layout"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:background="#F3FAFF"
-        android:gravity="right"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginRight="90dp"
-            android:src="@drawable/back_button" />
-
-        <TextView
-            android:id="@+id/userProfile_banner"
-            android:layout_width="220dp"
-            android:layout_height="75dp"
-            android:background="@drawable/dashboard_banner_container"
-            android:fontFamily="@font/ubuntu_bold"
-            android:gravity="center"
-            android:paddingRight="10dp"
-            android:text="Profile"
-            android:textColor="@color/white"
-            android:textSize="24dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/userInfoText"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="User Info"
-        android:textColor="#2E2E2E"
-        android:textSize="@dimen/_20sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfile_upper_layout" />
-
-    <LinearLayout
-        android:layout_width="@dimen/_290sdp"
-        android:layout_height="394dp"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:background="@drawable/white_background_icon"
-        android:elevation="@dimen/_10sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInfoText"
-        app:layout_constraintVertical_bias="0.155">
-
-        <FrameLayout
-            android:id="@+id/profileFrame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_2sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userInfoText">
-
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/userProfilePic"
-                android:layout_width="@dimen/_110sdp"
-                android:layout_height="@dimen/_110sdp"
-                android:background="@drawable/icon_background2"
-                android:scaleType="centerCrop"
-                android:src="@drawable/sb_logo_only"
-                app:riv_oval="true" />
-
-        </FrameLayout>
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/userProfile_upper_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_14sdp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/_8sdp"
-            android:paddingRight="@dimen/_8sdp"
+            android:layout_height="75dp"
+            android:background="#F3FAFF"
+            android:gravity="right"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileFrame">
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="90dp"
+                android:src="@drawable/back_button" />
 
             <TextView
-                android:id="@+id/user_Bio"
+                android:id="@+id/userProfile_banner"
+                android:layout_width="220dp"
+                android:layout_height="75dp"
+                android:background="@drawable/dashboard_banner_container"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/userInfoText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ubuntu"
-                android:maxLines="1"
-                android:text=""
-                android:textSize="@dimen/_12ssp" />
+                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginRight="@dimen/_60sdp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="User Info"
+                android:textColor="#2E2E2E"
+                android:textSize="@dimen/_20sdp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_16ssp"
-                android:orientation="horizontal">
+                android:id="@+id/edit_button"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/azure_background_icon"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/_2sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:src="@drawable/edit_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="Edit Profile"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:elevation="@dimen/_12sdp"
+            android:orientation="vertical"
+            android:background="@drawable/white_background_icon"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/userProfilePic"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_background2"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sb_logo_only"
+                    app:riv_oval="true" />
+
+                <TextView
+                    android:id="@+id/user_Bio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/ubuntu"
+                    android:maxLines="1"
+                    android:textSize="@dimen/_12sdp" />
 
                 <TextView
                     android:id="@+id/fullName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:fontFamily="@font/ubuntu_bold"
-                    android:text=""
                     android:textColor="@color/azure"
-                    android:textSize="@dimen/_24ssp" />
+                    android:textSize="@dimen/_24sdp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Username: "
+                        android:textSize="@dimen/_16sdp" />
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/azure"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Email: "
+                        android:textSize="@dimen/_16sdp" />
+
+                    <TextView
+                        android:id="@+id/userEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/azure"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Password: "
+                        android:textSize="@dimen/_16sdp" />
+
+                    <TextView
+                        android:id="@+id/userPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/azure"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:orientation="horizontal">
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu_bold"
-                    android:text="Username: "
-                    android:textSize="@dimen/_16ssp" />
-
-                <TextView
-                    android:id="@+id/userName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:text=""
-                    android:textColor="@color/azure"
-                    android:textSize="@dimen/_13ssp" />
-
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:elevation="@dimen/_12sdp"
+            android:orientation="vertical"
+            android:background="@drawable/white_background_icon"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu_bold"
-                    android:text="Email: "
-                    android:textSize="@dimen/_16ssp" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/userEmail"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Interests:"
+                        android:textSize="@dimen/_20sdp" />
+
+                    <TextView
+                        android:id="@+id/userInterest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/azure"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:text=""
-                    android:textColor="@color/azure"
-                    android:textSize="@dimen/_13ssp" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Subjects:"
+                        android:textSize="@dimen/_20sdp" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/userSubjects"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/azure"
+                        android:textSize="@dimen/_13sdp" />
 
-                <TextView
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu_bold"
-                    android:text="Password: "
-                    android:textSize="@dimen/_16ssp" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/userPassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:text=""
-                    android:textColor="@color/azure"
-                    android:textSize="@dimen/_13ssp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Study Buddies:"
+                        android:textSize="@dimen/_20sdp" />
+
+                    <TextView
+                        android:id="@+id/userStudyBuddies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/azure"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -208,37 +321,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/edit_button"
-        android:layout_width="@dimen/_260sdp"
-        android:layout_height="@dimen/_45sdp"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/azure_background_icon"
-        android:elevation="@dimen/_3sdp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:paddingRight="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_gravity="center"
-            android:layout_marginRight="@dimen/_3sdp"
-            android:src="@drawable/edit_icon" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_14sdp"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="Edit Profile"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp" />
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

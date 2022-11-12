@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/logout_dialogContainer2"
+    android:layout_width="350dp"
+    android:layout_height="160dp"
+    android:layout_gravity="center"
+    android:background="@drawable/forget_pass_popup"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/logout_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/reset_title"
+        android:fontFamily="@font/ubuntu"
+        android:gravity="fill_vertical"
+        android:paddingLeft="15dp"
+        android:text="Logging out"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/logout_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:fontFamily="@font/ubuntu"
+        android:text="Update Complete! Please log back in with your new password!"
+        android:textAlignment="center"
+        android:textColor="#43B0F1"
+        android:textSize="15dp" />
+
+
+    <Button
+        android:id="@+id/update_complete"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/signup_button"
+        android:fontFamily="@font/ubuntu"
+        android:text="OK"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+</LinearLayout>
