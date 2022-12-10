@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -16,12 +16,21 @@
         android:roundIcon="@drawable/sb_logo_only"
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyBuddyApp"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.FriendProfile"
+            android:exported="false"
+            android:theme="@style/Theme.StudyBuddyApp"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activities.Messages"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp2"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -30,7 +39,7 @@
             android:name=".activities.Chat"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -39,7 +48,7 @@
             android:name=".activities.Friends"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp2"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -48,7 +57,7 @@
             android:name=".activities.EditProfile"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -57,7 +66,7 @@
             android:name=".activities.UserProfile"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -66,7 +75,7 @@
             android:name=".activities.Settings"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp2"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -75,7 +84,7 @@
             android:name=".activities.Splashscreen"
             android:exported="true"
             android:theme="@style/Theme.StudyBuddyApp.NoStatusBar"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -90,7 +99,7 @@
             android:name=".activities.SignUp"
             android:exported="false"
             android:theme="@style/Theme.StudyBuddyApp"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -100,7 +109,7 @@
             android:exported="true"
             android:noHistory="true"
             android:theme="@style/Theme.StudyBuddyApp"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -109,7 +118,7 @@
             android:name=".activities.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.StudyBuddyApp"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -121,7 +130,7 @@
 
         <service
             android:name=".firebase.MessagingService"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

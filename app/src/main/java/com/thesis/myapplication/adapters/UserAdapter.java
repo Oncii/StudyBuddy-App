@@ -5,12 +5,10 @@ import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.makeramen.roundedimageview.RoundedImageView;
 import com.thesis.myapplication.databinding.ItemContainerUserBinding;
 import com.thesis.myapplication.listeners.UserListener;
 import com.thesis.myapplication.models.User;

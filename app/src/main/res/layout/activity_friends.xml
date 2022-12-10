@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/friends_upper_layout"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="@dimen/_58sdp"
         android:background="#F3FAFF"
         android:gravity="right"
         android:orientation="horizontal"
@@ -29,15 +29,15 @@
 
         <TextView
             android:id="@+id/friends_banner"
-            android:layout_width="220dp"
-            android:layout_height="75dp"
+            android:layout_width="@dimen/_168sdp"
+            android:layout_height="@dimen/_58sdp"
             android:background="@drawable/dashboard_banner_container"
             android:fontFamily="@font/ubuntu_bold"
             android:gravity="center"
-            android:paddingRight="10dp"
+            android:paddingRight="@dimen/_5sdp"
             android:text="Meet Friends"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -52,7 +52,7 @@
         android:fontFamily="@font/ubuntu_bold"
         android:text="Look for your"
         android:textColor="#5E5E5E"
-        android:textSize="@dimen/_20ssp"
+        android:textSize="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/friends_upper_layout" />
 
@@ -65,7 +65,7 @@
         android:paddingLeft="@dimen/_12sdp"
         android:text="study buddy!"
         android:textColor="@color/azure"
-        android:textSize="@dimen/_26ssp"
+        android:textSize="@dimen/_26sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/friendText1" />
 
@@ -154,7 +154,7 @@
                 android:fontFamily="@font/ubuntu_bold"
                 android:text="Add Friends"
                 android:textColor="@color/azure"
-                android:textSize="@dimen/_11ssp" />
+                android:textSize="@dimen/_11sdp" />
 
         </LinearLayout>
 
@@ -183,7 +183,7 @@
                 android:fontFamily="@font/ubuntu_bold"
                 android:text="Friend List"
                 android:textColor="@color/azure"
-                android:textSize="@dimen/_11ssp" />
+                android:textSize="@dimen/_11sdp" />
 
         </LinearLayout>
 
@@ -213,7 +213,7 @@
                 android:fontFamily="@font/ubuntu_bold"
                 android:text="Friend Request"
                 android:textColor="@color/azure"
-                android:textSize="@dimen/_11ssp" />
+                android:textSize="@dimen/_11sdp" />
 
         </LinearLayout>
 

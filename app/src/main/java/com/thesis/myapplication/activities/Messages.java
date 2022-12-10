@@ -111,7 +111,5 @@ public class Messages extends AppCompatActivity implements ConversionListener {
         Intent intent = new Intent(getApplicationContext(), Chat.class);
         intent.putExtra(Constants.KEY_USER, user);
         startActivity(intent);
-        finish();
     }
-
 }
