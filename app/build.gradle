@@ -7,6 +7,22 @@ android {
     namespace 'com.thesis.myapplication'
     compileSdk 33
 
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    //packagingOptions {
+    // exclude 'META-INF/LICENSE'
+    // exclude 'META-INF/LICENSE.txt'
+    // exclude 'META-INF/NOTICE'
+    // exclude 'META-INF/NOTICE.txt'
+    // }
+
     defaultConfig {
         applicationId "com.thesis.myapplication"
         minSdk 22
@@ -32,8 +48,19 @@ android {
     viewBinding.enabled = true
 }
 
+configurations {
+    implementation.exclude module:'proto-google-common-protos'
+    implementation.exclude module:'protolite-well-known-types'
+    //implementation.exclude module:'guava'
+    implementation.exclude module:'protobuf-lite'
+    implementation.exclude(group: 'com.google.firebase', module: 'protolite-well-known-types')
+}
+
 dependencies {
 
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -59,4 +86,12 @@ dependencies {
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+    //dialogFlow
+    implementation 'com.google.cloud:google-cloud-dialogflow:2.1.0'
+    //implementation platform('com.google.cloud:libraries-bom:24.3.0')
+    //implementation ('com.google.cloud:google-cloud-dialogflow')/*2.1.0*/{
+       // exclude group: 'com.google.api.grpc'
+    //}
+    implementation 'io.grpc:grpc-okhttp:1.51.0'
 }
