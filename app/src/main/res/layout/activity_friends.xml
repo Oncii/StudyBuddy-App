@@ -129,36 +129,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/addFriends_button"
-            android:layout_width="@dimen/_95sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:background="@drawable/white_background_icon"
-            android:elevation="@dimen/_4sdp"
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/_5sdp">
-
-            <ImageView
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_45sdp"
-                android:layout_marginRight="@dimen/_4sdp"
-                android:src="@drawable/add_friends_icon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_12sdp"
-                android:fontFamily="@font/ubuntu_bold"
-                android:text="Add Friends"
-                android:textColor="@color/azure"
-                android:textSize="@dimen/_11sdp" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/friendList_button"
             android:layout_width="@dimen/_95sdp"
             android:layout_height="wrap_content"
@@ -166,6 +136,7 @@
             android:layout_marginTop="@dimen/_6sdp"
             android:background="@drawable/white_background_icon"
             android:elevation="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/_4sdp">

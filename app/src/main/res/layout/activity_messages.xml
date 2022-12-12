@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/white"
-    tools:context=".activities.Friends">
+    tools:context=".activities.Message">
 
     <LinearLayout
         android:id="@+id/message_upper_layout"

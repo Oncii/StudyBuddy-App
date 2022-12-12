@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 } if(preferenceManager.getString(Constants.KEY_IMAGE) == null) {
                     noImage();
                 } else {
-                    startActivity(new Intent(getApplicationContext(), Messages.class));
+                    startActivity(new Intent(getApplicationContext(), Message.class));
                 }
             }
         });
@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Settings.class)));
         binding.friendsButton.setOnClickListener(view -> checkIfUserHasProfilePic1());
         binding.messagesButton.setOnClickListener(view -> checkIfUserHasProfilePic2());
+        binding.aivyButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), AivyChatbot.class)));
     }
 
 

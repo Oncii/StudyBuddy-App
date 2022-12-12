@@ -37,7 +37,12 @@ public class Friends extends AppCompatActivity implements UserListener {
     }
 
     private void setListeners() {
-        binding.backButton.setOnClickListener(view -> onBackPressed());
+        binding.backButton.setOnClickListener(view ->
+                onBackPressed());
+        binding.friendListButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), FriendList.class)));
+        binding.friendRequestButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), FriendRequests.class)));
     }
 
     private void getUsers() {

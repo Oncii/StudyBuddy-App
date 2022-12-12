@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Messages extends AppCompatActivity implements ConversionListener {
+public class Message extends AppCompatActivity implements ConversionListener {
 
     private ActivityMessagesBinding binding;
     private PreferenceManager preferenceManager;

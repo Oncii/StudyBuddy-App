@@ -32,7 +32,8 @@ public class FriendProfile extends AppCompatActivity {
     }
 
     private void setListeners(){
-        binding.backButton.setOnClickListener(view -> onBackPressed());
+        binding.backButton.setOnClickListener(view ->
+                onBackPressed());
     }
 
     private void loadReceiverDetails() {
