@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
         binding.messagesButton.setOnClickListener(view -> checkIfUserHasProfilePic2());
         binding.aivyButton.setOnClickListener(view ->
                 startActivity(new Intent(getApplicationContext(), Aivy.class)));
+        binding.subjectsButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), ToDoList.class)));
     }
 
 
