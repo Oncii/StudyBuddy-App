@@ -29,6 +29,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.thesis.myapplication.R;
+import com.thesis.myapplication.activities.chatbot.Aivy;
 import com.thesis.myapplication.databinding.ActivityMainBinding;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         binding.friendsButton.setOnClickListener(view -> checkIfUserHasProfilePic1());
         binding.messagesButton.setOnClickListener(view -> checkIfUserHasProfilePic2());
         binding.aivyButton.setOnClickListener(view ->
-                startActivity(new Intent(getApplicationContext(), AivyChatbot.class)));
+                startActivity(new Intent(getApplicationContext(), Aivy.class)));
     }
 
 

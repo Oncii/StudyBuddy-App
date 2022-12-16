@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_4sdp"
+    android:paddingStart="@dimen/_4sdp"
+    android:paddingBottom="@dimen/_4sdp"
+    android:paddingEnd="@dimen/_8sdp"
+    android:layout_margin="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/idTVUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/chat_holder_background_user"
+        android:fontFamily="@font/ubuntu"
+        android:maxWidth="@dimen/_200sdp"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
