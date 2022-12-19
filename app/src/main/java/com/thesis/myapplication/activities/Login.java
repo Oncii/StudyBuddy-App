@@ -35,6 +35,7 @@ public class Login extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private PreferenceManager preferenceManager;
 
+
     //Popup for Forget Password
     Dialog forgot_dialog;
 

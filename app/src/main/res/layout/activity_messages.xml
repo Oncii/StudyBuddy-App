@@ -107,7 +107,7 @@
             android:fontFamily="@font/ubuntu_bold"
             android:gravity="center"
             android:textColor="@color/azure"
-            android:textSize="@dimen/_24sdp"
+            android:textSize="@dimen/_18sdp"
             android:visibility="visible" />
 
     </FrameLayout>

@@ -2,24 +2,33 @@ package com.thesis.myapplication.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -30,12 +39,17 @@ import com.thesis.myapplication.databinding.ActivitySignUpBinding;
 import com.thesis.myapplication.utilities.Constants;
 import com.thesis.myapplication.utilities.PreferenceManager;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.HashMap;
 
 public class SignUp extends AppCompatActivity {
 
     private ActivitySignUpBinding binding;
     private PreferenceManager preferenceManager;
+    private String encodedImage;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +62,47 @@ public class SignUp extends AppCompatActivity {
 
     private void setListeners() {
         binding.signupCancelButton.setOnClickListener(view -> onBackPressed());
+        binding.profileFrame.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            pickImage.launch(intent);
+        });
+        binding.termsConditionButton.setOnClickListener(view -> termsCondition());
     }
+
+    private String encodedImage(Bitmap bitmap) {
+        int previewWidth = 150;
+        int previewHeight = bitmap.getHeight() * previewWidth / bitmap.getWidth();
+        Bitmap previewBitmap = Bitmap.createScaledBitmap(bitmap, previewWidth, previewHeight, false);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        previewBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] bytes = byteArrayOutputStream.toByteArray();
+        return Base64.encodeToString(bytes, Base64.DEFAULT);
+    }
+
+    private final ActivityResultLauncher<Intent> pickImage = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    if (result.getData() != null) {
+                        Uri imageUri = result.getData().getData();
+                        try {
+                            InputStream inputStream = getContentResolver().openInputStream(imageUri);
+                            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                            binding.userProfilePic.setImageBitmap(bitmap);
+                            encodedImage = encodedImage(bitmap);
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+    );
 
     public void signupUser(View view) {
         if (!isConnected(this)) {
             noInt();
-        } else if (!validateName() | !validateUsername() | !validateEmail() | !validatePassword() | !validateConfPassword()) {
+        } else if (!validateName() | !validateUsername() | !validateEmail() | !validatePassword() | !validateConfPassword() | !validateProfile()) {
             return;
         } else {
             checkIfEmailExists(view);
@@ -80,6 +129,7 @@ public class SignUp extends AppCompatActivity {
                     preferenceManager.putString(Constants.KEY_USERNAME, binding.signupUsername.getText().toString().trim());
                     preferenceManager.putString(Constants.KEY_EMAIL, binding.signupEmail.getText().toString().trim());
                     preferenceManager.putString(Constants.KEY_PASSWORD, binding.signupPassword.getText().toString().trim());
+                    preferenceManager.putString(Constants.KEY_IMAGE, encodedImage);
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
@@ -89,6 +139,18 @@ public class SignUp extends AppCompatActivity {
                     loading(false);
                     showToast(exception.getMessage());
                 });
+
+    }
+
+
+    private Boolean validateProfile() {
+        if (encodedImage == null) {
+            Toast.makeText(getApplicationContext(), "Add a profile picture to proceed!", Toast.LENGTH_SHORT).show();
+            return false;
+        } else {
+            binding.tapToAddImage.setVisibility(View.INVISIBLE);
+            return true;
+        }
     }
 
     private Boolean validateName() {
@@ -139,7 +201,8 @@ public class SignUp extends AppCompatActivity {
                         }
 
                     }
-                } if(task.getResult().size() == 0){
+                }
+                if (task.getResult().size() == 0) {
                     signup();
                     return;
                 }
@@ -248,6 +311,21 @@ public class SignUp extends AppCompatActivity {
                 alertDialog.dismiss();
             }
         });
+        if (alertDialog.getWindow() != null) {
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+        alertDialog.show();
+    }
+
+    private void termsCondition() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(SignUp.this, R.style.AlertDialogTheme);
+        View view = LayoutInflater.from(SignUp.this).inflate(
+                R.layout.terms_conditions, findViewById(R.id.noInt_dialogContainer)
+        );
+        builder.setView(view);
+
+        final AlertDialog alertDialog = builder.create();
+
         if (alertDialog.getWindow() != null) {
             alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         }

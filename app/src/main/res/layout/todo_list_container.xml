@@ -9,8 +9,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="@dimen/_8sdp"
-        app:cardElevation="@dimen/_8sdp"
+        android:background="@drawable/white_background_icon"
+        android:elevation="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_4sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +24,7 @@
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/todo_checkbox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:buttonTint="@color/azure"
                 android:paddingStart="@dimen/_10sdp"
                 android:text="This is task 1"
@@ -39,7 +40,7 @@
                 android:layout_marginStart="46dp"
                 android:fontFamily="@font/ubuntu"
                 android:text="31-3-2022"
-                android:textSize="@dimen/_8sdp"
+                android:textSize="@dimen/_10sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/todo_checkbox" />
 

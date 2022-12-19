@@ -88,7 +88,7 @@ public class Friends extends AppCompatActivity implements UserListener {
     }
 
     private void errorMessage() {
-        binding.errorText.setText((String.format("%s", "NO FRIENDS YET")));
+        binding.errorText.setText((String.format("%s", "SOMETHING WENT WRONG")));
         binding.errorText.setVisibility(View.VISIBLE);
 
     }

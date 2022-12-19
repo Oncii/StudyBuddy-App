@@ -1,113 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:orientation="vertical"
-    tools:context=".activities.chatbot.Aivy">
+    android:layout_height="@dimen/_500sdp"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:padding="@dimen/_22sdp"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_8sdp"
+    android:background="@drawable/forget_pass_popup">
 
     <LinearLayout
-        android:id="@+id/chat_upper_layout"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:background="#F3FAFF"
-        android:gravity="right"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginRight="90dp"
-            android:src="@drawable/back_button" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/chat_banner"
-            android:layout_width="220dp"
-            android:layout_height="75dp"
-            android:background="@drawable/dashboard_banner_container"
-            android:fontFamily="@font/ubuntu_bold"
-            android:gravity="center"
-            android:paddingRight="10dp"
-            android:text="Chatbot"
+            android:id="@+id/noInt_title"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Terms &amp; Conditions"
+            android:background="@drawable/terms_title_bar"
             android:textColor="@color/white"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_18sdp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INTERPRETATION"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/interpretation"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEFINITIONS"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_15sdp"/>
 
     </LinearLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/friend_list_holder"
-        android:elevation="@dimen/_14sdp"
-        android:layout_marginTop="@dimen/_60sdp"
-        android:layout_above="@id/lower_chat_banner">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/idRVChats"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F3FAFF"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:overScrollMode="never"
-            android:visibility="gone"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:stackFromEnd="true" />
-
-    </FrameLayout>
-
-    <RelativeLayout
-        android:id="@+id/lower_chat_banner"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/friend_button_banner"
-        android:translationZ="@dimen/_50sdp"
-        android:gravity="center">
-
-        <EditText
-            android:id="@+id/idEdtMessage"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:hint="Talk to Aivy..."
-            android:layout_toLeftOf="@id/idFABSend"
-            android:fontFamily="@font/ubuntu"
-            android:imeOptions="actionDone"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textSize="@dimen/_11sdp"
-            android:background="@drawable/text_input_background"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginLeft="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:layout_marginRight="@dimen/_8sdp"
-            android:layout_marginBottom="@dimen/_10sdp"/>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFABSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/send_button_icon"
-            app:fabCustomSize="@dimen/_45sdp"
-            app:tint="@color/azure" />
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</ScrollView>

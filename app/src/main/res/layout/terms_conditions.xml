@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_450sdp"
+    android:maxHeight="@dimen/_450sdp"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:padding="@dimen/_22sdp"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_20sdp"
+    android:scrollbars="none"
+    android:background="@drawable/forget_pass_popup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/noInt_title"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Terms &amp; Conditions"
+            android:background="@drawable/terms_title_bar"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_18sdp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INTERPRETATION"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/interpretation"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEFINITIONS"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_1"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_2"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_3"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_4"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_5"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_6"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_7"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_8"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_9"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_10"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_11"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acknowledgement"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_12"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_13"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/definitions_14"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEVERABILITY"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/severability"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WAIVER"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textAlignment="center"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/waiver"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

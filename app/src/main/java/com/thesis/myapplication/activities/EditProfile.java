@@ -102,14 +102,14 @@ public class EditProfile extends AppCompatActivity {
                 );
         documentReference.update(Constants.KEY_USER_BIO, binding.editBio.getText().toString());
         documentReference.update(Constants.KEY_USERNAME, binding.editUsername.getText().toString());
-        documentReference.update(Constants.KEY_PASSWORD, binding.editPassword.getText().toString());
+        documentReference.update(Constants.KEY_PASSWORD, binding.editPassword.getEditText().getText().toString());
         documentReference.update(Constants.KEY_IMAGE, encodedImage);
         preferenceManager.clear();
         Intent intent = new Intent(getApplicationContext(), Login.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
-        showToast("Update complete! Login with your new password!");
+        showToast("Update complete! Login back in with your credentials!");
     }
 
     private Boolean validateProfile() {
@@ -122,7 +122,7 @@ public class EditProfile extends AppCompatActivity {
     }
 
     private Boolean validatePassword() {
-        String val = binding.editPassword.getText().toString().trim();
+        String val = binding.editPassword.getEditText().getText().toString().trim();
         String passwordVal = "^" +
                 //"(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter
@@ -249,7 +249,7 @@ public class EditProfile extends AppCompatActivity {
         binding.editName.setText(preferenceManager.getString(Constants.KEY_NAME));
         binding.editEmail.setText(preferenceManager.getString(Constants.KEY_EMAIL));
         binding.editBio.setText(preferenceManager.getString(Constants.KEY_USER_BIO));
-        binding.editPassword.setText(preferenceManager.getString(Constants.KEY_PASSWORD));
+        binding.editPassword.getEditText().setText(preferenceManager.getString(Constants.KEY_PASSWORD));
         if (preferenceManager.getString(Constants.KEY_IMAGE) != null) {
             byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);
             Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);

@@ -86,14 +86,25 @@ public class Message extends AppCompatActivity implements ConversionListener {
                     }
                 }
             }
-            Collections.sort(conversations, (obj1, obj2) -> obj1.dateObject.compareTo(obj2.dateObject));
-            Collections.reverse(conversations);
-            recentConversationAdapter.notifyDataSetChanged();
-            binding.rvMessages.smoothScrollToPosition(0);
-            binding.rvMessages.setVisibility(View.VISIBLE);
-            binding.progressBar.setVisibility(View.GONE);
+            if(conversations.size() == 0) {
+                errorMessage();
+            } else {
+                Collections.sort(conversations, (obj1, obj2) -> obj1.dateObject.compareTo(obj2.dateObject));
+                Collections.reverse(conversations);
+                recentConversationAdapter.notifyDataSetChanged();
+                binding.rvMessages.smoothScrollToPosition(0);
+                binding.rvMessages.setVisibility(View.VISIBLE);
+                binding.progressBar.setVisibility(View.GONE);
+            }
         }
     };
+
+    private void errorMessage() {
+        binding.errorText.setText((String.format("%s", "NO CONVERSATIONS YET")));
+        binding.errorText.setVisibility(View.VISIBLE);
+        binding.progressBar.setVisibility(View.GONE);
+
+    }
 
     private void init() {
         conversations = new ArrayList<>();

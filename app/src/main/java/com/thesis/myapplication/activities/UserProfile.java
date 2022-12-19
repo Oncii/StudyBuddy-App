@@ -48,7 +48,8 @@ public class UserProfile extends AppCompatActivity {
         binding.fullName.setText(preferenceManager.getString(Constants.KEY_NAME));
         binding.userEmail.setText(preferenceManager.getString(Constants.KEY_EMAIL));
         binding.userBio.setText(preferenceManager.getString(Constants.KEY_USER_BIO));
-        binding.userPassword.setText(preferenceManager.getString(Constants.KEY_PASSWORD));
+
+        binding.userPassword.getEditText().setText(preferenceManager.getString(Constants.KEY_PASSWORD));
 
         if(preferenceManager.getString(Constants.KEY_IMAGE) != null){
             byte[] bytes = Base64.decode(preferenceManager.getString(Constants.KEY_IMAGE), Base64.DEFAULT);

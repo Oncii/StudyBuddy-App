@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.thesis.myapplication.R;
 import com.thesis.myapplication.listeners.OnDialogCloseListener;
@@ -122,6 +123,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
                     taskMap.put("task", task);
                     taskMap.put("due", dueDate);
                     taskMap.put("status", 0);
+                    taskMap.put("time", FieldValue.serverTimestamp());
 
                     firestore.collection("task").add(taskMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                         @Override
