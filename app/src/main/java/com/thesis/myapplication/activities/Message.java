@@ -39,6 +39,7 @@ public class Message extends AppCompatActivity implements ConversionListener {
         setListeners();
         init();
         listenConversations();
+        binding.addMessageButton.setVisibility(View.GONE);
     }
 
     private void listenConversations(){
