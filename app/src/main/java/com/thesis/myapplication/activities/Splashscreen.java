@@ -24,7 +24,7 @@ import com.thesis.myapplication.databinding.ActivitySplashscreenBinding;
 public class Splashscreen extends AppCompatActivity {
 
     //Duration for the Splashscreen
-    private static int SPLASH_SCREEN = 1800;
+    private static int SPLASH_SCREEN = 1600;
 
     private ActivitySplashscreenBinding binding;
     private LinearLayout mLayout;

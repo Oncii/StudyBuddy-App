@@ -60,12 +60,14 @@ public class ToDoList extends AppCompatActivity implements OnDialogCloseListener
 
     private void setListeners() {
         binding.backButton.setOnClickListener(view -> onBackPressed());
-        /**
-        *binding.addNoteButton.setOnClickListener(view ->
-                *AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG));
-         */
+
         binding.addNoteButton.setOnClickListener(view ->
-                startActivity(new Intent(getApplicationContext(), NoteDetails.class)));
+                AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG));
+
+        /**
+         binding.addNoteButton.setOnClickListener(view ->
+         startActivity(new Intent(getApplicationContext(), NoteDetails.class)));
+         */
     }
 
     private void showData() {

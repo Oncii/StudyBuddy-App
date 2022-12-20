@@ -40,6 +40,8 @@ public class Settings extends AppCompatActivity {
         binding.userProfileButton.setOnClickListener(view ->
                 startActivity(new Intent(getApplicationContext(), UserProfile.class)));
         binding.logoutButton.setOnClickListener(view -> logoutConfirmation());
+        binding.aboutAppButton.setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), AboutApplication.class)));
     }
     private void showToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();

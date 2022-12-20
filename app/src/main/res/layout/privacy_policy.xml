@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_450sdp"
+    android:maxHeight="@dimen/_450sdp"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:padding="@dimen/_22sdp"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_20sdp"
+    android:scrollbars="none"
+    android:background="@drawable/forget_pass_popup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/noInt_title"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Privacy Policy"
+            android:background="@drawable/terms_title_bar"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_18sdp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_1"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_2"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="none"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/separator"
+            android:fontFamily="@font/ubuntu"
+            android:layout_gravity="center"
+            android:justificationMode="none"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. WHAT INFORMATION DO WE COLLECT?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_3"
+            android:fontFamily="@font/ubuntu"
+            android:justificationMode="inter_word"
+            android:textSize="@dimen/_11sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. HOW DO WE PROCESS YOUR INFORMATION?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. HOW DO WE HANDLE YOUR SOCIAL LOGINS?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. HOW LONG DO WE KEEP YOUR INFORMATION?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6. DO WE COLLECT INFORMATION FROM MINORS?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7. WHAT ARE YOUR PRIVACY RIGHTS"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8. CONTROLS FOR DO-NOT-TRACK FEATURES"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PROVACY RIGHTS?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10. DO WE MAKE UPDATES TO THIS NOTICE?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_15sdp"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

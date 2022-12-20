@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:elevation="@dimen/_8sdp"
     android:layout_margin="@dimen/_8sdp">
 
     <androidx.cardview.widget.CardView
@@ -11,7 +12,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/white_background_icon"
         android:elevation="@dimen/_12sdp"
-        app:cardCornerRadius="@dimen/_4sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,8 +26,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:buttonTint="@color/azure"
-                android:paddingStart="@dimen/_10sdp"
+                android:paddingStart="@dimen/_6sdp"
                 android:text="This is task 1"
+                android:textSize="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
